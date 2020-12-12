@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <title>ADHYAYANA LOGIN AND SIGNUP FORM</title>
+      <link rel="stylesheet" href="design.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script>
+            $(document).ready(function(){
+               $(".login-form").hide();
+               $(".login").css("background", "none");
+
+               $(".login").click(function(){
+                  $(".signup-form").hide();
+                  $(".login-form").show();
+                  $(".signup").css("background", "none");
+                  $(".login").css("background", "#fff");
+
+            });
+
+
+              $(".signup").click(function(){
+                  $(".signup-form").show();
+                  $(".login-form").hide();
+                  $(".signup").css("background", "#fff");
+                  $(".login").css("background", "none");
+
+            });
+
+              $(".btn").click(function(){
+               $(".input").val("");
+              });
+            });
+      </script>
+</head>
+<body>
+
+<div class="container">
+     <div class="signup">signup</div>
+     <div class="login">login</div>
+
+     <div class="signup-form">
+        <input type="text" placeholder="Your Email Address" class="input"><br>
+        <input type="text" placeholder="Choose a Username" class="input"><br>
+        <input type="password" placeholder="Choose a Password" class="input"><br>
+        <div class="btn">Create account</div>
+    </div>
+
+    <div class="login-form">
+       <input type="text"class="input" placeholder="Email or Username"><br>
+       <input type="password" class="input" placeholder="Password"><br>
+       <div class="btn">Log in</div>
+       <span><a href="#">I Forgot My Username Or Password</a></span>
+   </div>  
+</div>
+</body>
+</html>   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
