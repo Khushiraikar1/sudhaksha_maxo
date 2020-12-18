@@ -1,0 +1,77 @@
+{%load static%}
+
+<style>
+    .popup{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.7);
+  position: absolute;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+.ok1{
+  height: 35px;
+  width: 75px;
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin: 20px 0px 0px;
+}
+.contents1{
+  height: 670px;
+  width: 600px;
+  background-color:white;
+  border-radius: 4px;
+  text-align: center;
+  top: auto;
+  padding: 20px;
+  
+}
+.buttn{
+width: 100%;
+background: #34b3a0;
+height:60px;
+text-align:center;
+line-height: 60px;
+text-transform: uppercase;
+color: #fff;
+border-radius: 20px;
+font-weight: bold;
+letter-spacing: 1px;
+cursor:pointer;
+margin-bottom: 30px;
+}
+</style>
+
+<div class="popup">
+      <div class="contents1">
+          <img src="{% static 'image\class.png' %}" alt="" height="70px" width="70px">
+          <div style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          font-size: 20px;margin: 10px auto;">
+
+          </div>
+          <form method = "POST" action="{% url 'create'%}">
+            {%csrf_token%}
+          {{form.as_p}}
+          <input type="submit" class="buttn"name="" id="" value="SUBMIT">
+          </form>
+
+
+          <button id="submit" class="ok1" onclick="nice()">CLOSE</button>
+
+      </div>
+  </div>
+  <script>
+      function pop()
+{
+  document.querySelector('.popup').style.display='flex';
+}
+function nice()
+{
+  document.querySelector('.popup').style.display='none';
+}
+  </script>
