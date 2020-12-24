@@ -11,6 +11,13 @@ ROLE=(("TEACHER","TEACHER"),
 USER_FIELD=(("ENGINEERING","ENGINEERING"),
             ("MEDICAL","MEDICAL"),
             ("OTHER","OTHER"))
+
+WEEK=(("MONDAY","MONDAY"),
+      ("TUESDAY","TUESDAY"),
+      ("WEDNESDAY","WEDNESDAY"),
+      ("THURSDAY","THURSDAY"),
+      ("FRIDAY","FRIDAY"),
+      ("SATURDAY","SATURDAY") )
 class profile(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     role=models.CharField(max_length=15,choices=ROLE,default="STUDENT")
@@ -32,7 +39,7 @@ class classroom(models.Model):
        members=models.ManyToManyField(profile)
 
        def __str__(self):
-              return self.class_name
+              return str(self.class_name)
 
        def get_abs_url(self):
               return reverse('classroom',kwargs={'c_id':self.classid})
@@ -40,5 +47,12 @@ class classroom(models.Model):
        def is_admin(self):
               return self.admin
 
+class timetable(models.Model):
+       clsobj=models.ForeignKey(classroom,on_delete=models.DO_NOTHING)
+       class_day=models.CharField(max_length=15,choices=WEEK)
+       class_time=models.TimeField()
+
+       def __str__(self):
+              return str(self.clsobj.class_name)
 
     

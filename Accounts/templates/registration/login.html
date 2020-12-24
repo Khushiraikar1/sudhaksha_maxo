@@ -2,9 +2,9 @@
 
 {%load static%}
 
-{%block login%}
+{%block content%}
 {%if form.errors%}
-	<script>M.toast({html: 'Wrong Username or Password!!', classes: 'red' ,displayLength:2000});</script>
+	<script>M.toast({html: 'Wrong Username or Password!!', classes: 'rounded' ,displayLength:3000});</script>
 	{%endif%}
 	<style>
 		body,

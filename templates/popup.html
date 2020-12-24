@@ -1,5 +1,8 @@
 {%load static%}
 
+{%load crispy_forms_tags%}
+
+{%load crispy_forms_filters%}
 <style>
     .popup{
   height: 100%;
@@ -56,7 +59,7 @@ margin-bottom: 30px;
           </div>
           <form method = "POST" action="{% url 'create'%}">
             {%csrf_token%}
-          {{form.as_p}}
+          {{form|crispy}}
           <input type="submit" class="buttn"name="" id="" value="SUBMIT">
           </form>
 

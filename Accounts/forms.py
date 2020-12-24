@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import profile,classroom
+from .models import profile,classroom,timetable
 
 class Registrationform(UserCreationForm):
 	email=forms.EmailField()
@@ -35,3 +35,9 @@ class Classform(forms.ModelForm):
 		self.fields['class_name'].widget.attrs['name'] ='class_name'
 		self.fields['class_sec'].widget.attrs['name']='section'
 		self.fields['class_subject'].widget.attrs['name'] = 'subject'
+
+class timetableform(forms.ModelForm):
+	class Meta:
+		model=timetable
+		fields=['class_day','class_time']
+		

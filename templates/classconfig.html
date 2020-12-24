@@ -1,0 +1,67 @@
+{% extends 'navbar.html'%}
+
+{%load static%}
+
+{%load crispy_forms_tags%}
+
+{%load crispy_forms_filters%}
+{%block content%}
+<style>
+	.asteriskField{
+		display: none;
+	}
+	.container-lg{
+		background-color: white;
+		height: auto;
+	}
+	.inpt{
+		margin: auto;
+		width: 50%;
+	}
+	.idinp{
+		width: 100%;
+		height: auto;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  text-align: center;
+	}
+</style>
+<div class="container-lg">
+	<div class="inpt">
+		<input class="idinp" type="text" value="{{user_class.classid}}">
+	</div>
+	{%if timetables%}
+	<table class="table">
+		<thead>
+		  <tr>
+			<th scope="col">#</th>
+			{%for day in week%}
+			<th scope="col">{{day}}</th>
+			{%endfor%}
+		  </tr>
+		</thead>
+		<tbody>
+			{%for rows in timetables%}
+			{%if rows%}
+			<tr>
+				<th scope="row">{{forloop.counter}}</th>
+				{%for cell in rows%}
+				<td>{{cell}}</td>
+				{%endfor%}
+			  </tr>
+			{%endif%}
+			{%endfor%}
+		  </tbody>
+	  </table>
+	{%endif%}
+	<form method="POST" action="">
+		{%csrf_token%}
+		{{form|crispy}}
+		<input type="submit" name="" value="SUBMIT">
+
+		<button onclick="location.href='{{user_class.get_abs_url}}';">CLOSE</button>
+	</form>
+</div>
+
+{%endblock%}

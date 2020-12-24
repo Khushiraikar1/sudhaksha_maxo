@@ -1,12 +1,13 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404
 from django.contrib import messages
-from Accounts.models import profile,classroom
-from Accounts.forms import Classform
+from Accounts.models import profile,classroom,timetable
+from Accounts.forms import Classform,timetableform
 from django.contrib.auth.decorators import login_required
 from Accounts.decarators import is_class_member,is_class_admin
 from Accounts.randgenrator import rand
 # Create your views here.
+week=['MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY']
 @login_required
 def createclass(request):
     if request.POST:
@@ -40,7 +41,7 @@ def joinclass(request):
         return redirect('classroom/'+c_id)
 
 def home(request):
-    form=Classform(request.POST)
+    form=Classform()
     #user=profile.objects.get(user=request.user)
     #user=profile.objects.all()
     #loc=TEMP
@@ -78,3 +79,57 @@ def CLASSROOM(request,c_id):
 @is_class_admin
 def classadmin(request,c_id):
     return HttpResponse("<h1>hi Admin</h1>")
+def formtimetable(contents):
+    context=contents
+    flag=0
+    if context['timetables']:
+        items={}
+        list1=[]
+        list2=[]
+        for day in week:
+            c=0
+            for ct in contents['timetables']:
+                if day==ct.class_day:
+                    if(c==0):
+                        list1.append(ct.class_time)
+                        c+=1
+                    elif(c==1):
+                        list2.append(ct.class_time)
+                        c+=1
+            if(c==0):
+                list1.append('None')
+                list2.append('None')
+            if(c==1):
+                list2.append('None')
+        context['timetables']=[list1,list2]
+    else:
+        context['timetables']=None
+    return context
+    
+
+@is_class_admin
+def classconfig(request,c_id):
+    class_obj=classroom.objects.get(classid=c_id)
+    cnt=0
+    if request.POST:
+        form=timetableform(request.POST)
+        day=request.POST['class_day']
+        time=request.POST['class_time']
+        time_day=timetable.objects.filter(clsobj=class_obj)
+        for classt in time_day:
+            if day in classt.class_day:
+                cnt+=1
+        if(cnt==2):
+            messages.error(request,f'You have already added maximum number of classes per Day')
+            return redirect('/classroom/'+c_id+'/classconfig')
+        else:
+            time_table=timetable(clsobj=class_obj,class_day=day,class_time=time)
+            time_table.save()
+            return redirect('/classroom/'+c_id+'/classconfig')
+    else:
+        timetables=timetable.objects.filter(clsobj=class_obj)
+        form=timetableform()
+        content={'form':form,'timetables':timetables,'week':week,'user_class':class_obj}
+        context=formtimetable(content)
+    return render(request, 'classconfig.html',context)
+
