@@ -55,4 +55,29 @@ class timetable(models.Model):
        def __str__(self):
               return str(self.clsobj.class_name)
 
+
+class attendance(models.Model):
+       att_class=models.ForeignKey(classroom,on_delete=models.DO_NOTHING)
+       attendance_time=models.DateTimeField()
+       attendees=models.ManyToManyField(profile)
+
+       def __str__(self):
+              return str(self.att_class)
+
+       def is_empty(self):
+              if self.attendees.count()!=0:
+                     return True
+              else:
+                     return False
+
+       def absentees(self):
+              absentees=[]
+              for member in self.att_class.members.all():
+                     if member not in self.attendees.all():
+                            absentees.append(member)
+              return absentees
+
+
+
+
     

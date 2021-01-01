@@ -10,5 +10,9 @@ urlpatterns=[
     path('classroom/<str:c_id>',views.CLASSROOM,name="classroom"),
     path('joinclass',views.joinclass,name="join"),
     path('classroom/<str:c_id>/admin',views.classadmin,name="admin-page"),
-    path('classroom/<str:c_id>/classconfig',views.classconfig,name="class-time")
+    path('classroom/<str:c_id>/classconfig',views.classconfig,name="class-time"),
+    path('classroom/<str:c_id>/people',views.people,name="people"),
+    path('classroom/<str:c_id>/attendance',views.class_attend,name="attendance"),
+    path('classroom/<str:c_id>/submit',views.attend_submit,name="submit-attendance"),
+
 ]
