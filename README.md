@@ -38,7 +38,7 @@ source venv/bin/activate
 
 ```
 If you are giving diffrent name for virtual environment `venv` then mention `.gitigonre` first.<br />
-   3. Install all the requirements
+3. Install all the requirements
 `pip install -r requirements.txt`
 
 ## Instalation
