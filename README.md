@@ -1,6 +1,6 @@
 # sudhaksha_maxo
 
-![ADHAYAYAN](https://user-images.githubusercontent.com/72095693/104127815-38e42480-538a-11eb-8676-70c7c67b9a1a.png)  ![logo-sudhaksha](https://user-images.githubusercontent.com/72095693/104128167-f91e3c80-538b-11eb-842d-623eeee1a504.png)
+![ADHAYAYAN](https://user-images.githubusercontent.com/72095693/104127815-38e42480-538a-11eb-8676-70c7c67b9a1a.png)  
 
 
 For the SCL maxo hackathon submission of team Sudhaksha
