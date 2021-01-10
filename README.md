@@ -37,16 +37,34 @@ python -m virtualenv venv
 source venv/bin/activate
 
 ```
-If you are giving diffrent name for virtual environment `venv` then mention `.gitigonre` first.
-3. Install all the requirements
+If you are giving diffrent name for virtual environment `venv` then mention `.gitigonre` first.<br />
+   3. Install all the requirements
 `pip install -r requirements.txt`
 
 ## Instalation
-4. Checkout the main branch
-```
-git status
-git pull
-git branch
-git checkout main
+4. Checkout to a development branch
+     ```git
+    git status
+    git pull
+    git branch
+    git checkout -b <your-branch-here>
+    ```
+   
+5. Make migrations/ Create db.sqlite3
 
-```
+    ```bash
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
+
+6. Create a super user.
+    In Django, if you want to access admin page, you need to create an account with staff status first.
+    ```djangotemplate
+    python manage.py createsuperuser
+    ```
+   Then select your username and password. You can bypass a common password for development purposes.
+   
+7. Run the server on localhost:
+    ```bash
+    python manage.py runserver
+    ```
