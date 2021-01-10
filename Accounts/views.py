@@ -45,4 +45,4 @@ def registration(request):
 
 def userlogout(request):
 	logout(request)
-	return render(request, 'logout.html')
+	return redirect('home')

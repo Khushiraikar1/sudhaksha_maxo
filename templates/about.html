@@ -1,12 +1,13 @@
-<!DOCTYPE html>
+{%extends 'navbar.html'%}
+
+{%block content%}
 <style>
-body, html{
+  body, html{
 	height: 100%;
   margin: 0;
 }
 
 .image{
-  background:#ffcccc;
   filter:blur(3px);
   -webkit-filter: blur(3px);
   height: 100vh;
@@ -16,7 +17,6 @@ body, html{
 }
 
 .bgimg {
-  background:#ffcccc;
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -38,6 +38,12 @@ body, html{
   font-size: 24px;
   text-align: center;
   font-family; bold;
+  border: black solid 2px;
+  border-radius: 50px;
+  background: white;
+  position: absolute;
+  left: 25px;
+  right: 25px;
 }
 
 .bottomleft {
@@ -55,35 +61,36 @@ hr {
 
 .navlink{
   text-decoration: none;
-  margin-rightt: 10px;
+  margin-right: 10px;
   color: back;
 }
 </style>
-<body>
-
 <div class="bgimg">
-  <div class="topleft">
-	 <a href="file:///C:/Users/PRATEEKSHA%20PAI/Documents/SCL%20MAXO/index.html" class="navlink">BACK</a>
-  </div>
+  <br>
+  <br>
   <br>
   <br>
   <div class="middle">
     <h2>About this app</h2>
 	<ul>
     	<li>
-		    <p>It is an app which will have features of conducting online live classes with a timetable.</p>
+		    <p>It is an app which will have features of conducting online live classes with a timetable and attendance.</p>
 		</li>
 		<br>
     	<li>
-    		<p>The faculty will have facility to post the recorded versions of their classes.</p>
+    		<p>The faculty will have facility to post the recorded versions of their classes and notes.</p>
     	</li>
 		<br>
     	<li>
-    		<p>There will be additional features like quizes, assignments to be assigned by the respective faculty users.</p>
+    		<p>There will be additional features like quizes, online compiler and career guidance.</p>
     	</li>
 		<br>
 		<li>
-    		<p>There is a separate section for career guidance</p>
+    		<p>There is a separate section for career guidance.</p>
+      </li>
+      <br>
+      <li>
+    		<p>contact us:adhayayan.scl7maxo@gmail.com</p>
     	</li>
 	</ul>
 </div>
@@ -91,6 +98,4 @@ hr {
     <p>TEAM SUDHAKSHA</p>
   </div>
 </div>
-
-</body>
-</html>
+{%endblock%}

@@ -51,7 +51,7 @@ border-radius: 15px;
 	<div class="container">
 		<div class="register"><div class="display-2" style="font-size: 30px;font-weight: 400; padding-top: 10px;">Complete registeration !</div></div>
 		<div class="register-form">
-			<form method="POST">
+			<form method="POST" enctype="multipart/form-data">
 				{%csrf_token%}
 				{{form1|crispy}}
 				<label for="disuid">Uid</label>

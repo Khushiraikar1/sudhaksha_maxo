@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import profile,classroom,timetable
+from .models import profile,classroom,timetable,attendance
 
 class Registrationform(UserCreationForm):
 	email=forms.EmailField()
@@ -20,11 +20,7 @@ class Register(forms.ModelForm):
 class Profileform(forms.ModelForm):
 	class Meta:
 		model=profile
-		fields=['role','image','user_field']
-	def __init__(self, *args, **kwargs):
-		super().__init__(*args, **kwargs)
-		#self.fields['Uid'].widget.attrs['disabled']=''
-		self.fields['image'].widget.attrs['placeholder'] = 'Image'
+		fields=['role','user_field']
 
 class Classform(forms.ModelForm):
 	class Meta:
@@ -40,4 +36,9 @@ class timetableform(forms.ModelForm):
 	class Meta:
 		model=timetable
 		fields=['class_day','class_time']
+	def __init__(self, *args, **kwargs):
+		super().__init__(*args, **kwargs)
+		self.fields['class_time'].widget.attrs['input_type'] ='time'
+
+
 		

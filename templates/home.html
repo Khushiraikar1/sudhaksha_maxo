@@ -67,6 +67,7 @@ body, html{
   margin: 4px 2px;
   border-radius: 19px;
   cursor: pointer;
+  outline: 0 !important;
 }
 
 hr {
@@ -92,39 +93,16 @@ hr {
     <h1 style="font-size: 50px;">ADHYAYANA</h1>
     <hr>
     <br>
+    {%if user.is_authenticated%}
     <button class="start-btn" onclick="pop()">CREATE CLASSROOM</button>
+    {%else%}
+    <button class="start-btn" onclick="location.href='{%url 'login'%}';">CREATE CLASSROOM</button>
+    {%endif%}
 	<br>
-    <button class="start-btn">LOGIN</button>
-  </div>
-    <div class="bottomleft">
-    <p>TEAM SUDHAKSHA</p>
+    <button class="start-btn"  onclick="location.href='{%url 'login'%}';">LOGIN</button>
   </div>
 </div>
 <br>
 <br>
-
-<div class="container" style="margin-left: 40px;">
-  <div class="row" style="margin: auto;">
-      
-    <div class="col-md-3">
-      <div class="card">
-        <iframe src="https://www.youtube.com/embed/YwJf2oD_RZA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="card-body">
-          <p class="card-text">What is Online Learning</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <div class="card" >
-        <iframe src="https://www.youtube.com/embed/YwJf2oD_RZA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="card-body">
-          <p class="card-text">What is Online Learning</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-  
 
 {%endblock%}

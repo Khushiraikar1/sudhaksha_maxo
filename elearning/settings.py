@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMP= BASE_DIR/'templates'
@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Accounts.apps.AccountsConfig',
     'userinterface.apps.UserinterfaceConfig',
-    'crispy_forms'
+    'quiz.apps.QuizConfig',
+    'career.apps.CareerConfig',
+    'crispy_forms',
+    'imagekit'
 ]
 
 MIDDLEWARE = [
@@ -123,9 +126,19 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
+EMAIL_HOST_USER = "adhayayan.scl7maxo@gmail.com"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_PASSWORD = "adhayayan7scl"
+EMAIL_USE_SSL=False
+
 LOGIN_REDIRECT_URL='home'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
     '/var/www/static/',
 ]
 success_url='/Accounts/registration'
+
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
