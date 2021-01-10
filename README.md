@@ -1,11 +1,7 @@
 # sudhaksha_maxo
 
 
-
-
 ![ADHAYAYAN](https://user-images.githubusercontent.com/72095693/104127815-38e42480-538a-11eb-8676-70c7c67b9a1a.png)
-
-
 
 
 
