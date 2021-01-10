@@ -73,8 +73,6 @@ pip install -r requirements.txt
     ```bash
     python manage.py runserver
     ```
-
-```
 ## Contributing
 - Fork the Project
 - Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
