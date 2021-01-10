@@ -30,7 +30,7 @@ So we are creating a app which will have features of conducting online live clas
 
 ***
 ## Getting Started
-** Prerequisites **
+ ## Prerequisites 
 1. Fork and Clone
    1.Fork the sudhaksha_maxo repo.
    2.Clone the repo in your computer
