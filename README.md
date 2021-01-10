@@ -47,17 +47,32 @@ pip install -r requirements.txt
 
 ```
 ## Instalation
-4. Checkout the developed branch
-```
-git status
-git pull
-git branch
-git checkout develop
+4. Checkout to a development branch
+     ```git
+    git status
+    git pull
+    git branch
+    git checkout -b <your-branch-here>
+    ```
+   
+5. Make migrations/ Create db.sqlite3
 
-```
-5. Runserver
-```
-python manage.py runserver
+    ```bash
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
+
+6. Create a super user.
+    In Django, if you want to access admin page, you need to create an account with staff status first.
+    ```djangotemplate
+    python manage.py createsuperuser
+    ```
+   Then select your username and password. You can bypass a common password for development purposes.
+   
+7. Run the server on localhost:
+    ```bash
+    python manage.py runserver
+    ```
 
 ```
 ## Contributing
