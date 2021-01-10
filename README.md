@@ -42,11 +42,11 @@ If you are giving diffrent name for virtual environment `venv` then mention `.gi
 `pip install -r requirements.txt`
 
 ## Instalation
-4. Checkout the developed branch
+4. Checkout the main branch
 ```
 git status
 git pull
 git branch
-git checkout develop
+git checkout main
 
 ```
