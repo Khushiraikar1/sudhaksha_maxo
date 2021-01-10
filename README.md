@@ -4,7 +4,7 @@
 
 ## CONTENTS
 1. [About Project](https://github.com/Khushiraikar1/sudhaksha_maxo#about-project)
-- [ Built with](https://github.com/Khushiraikar1/sudhaksha_maxo#built-with)
+   - [ Built with](https://github.com/Khushiraikar1/sudhaksha_maxo#built-with)
 2. [ Getting Started](https://github.com/Khushiraikar1/sudhaksha_maxo/blob/main/README.md#getting-started)
    - [Prerequisites](https://github.com/Khushiraikar1/sudhaksha_maxo#prerequisites)
    - [Installation](https://github.com/Khushiraikar1/sudhaksha_maxo#installation)
