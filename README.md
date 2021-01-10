@@ -4,8 +4,12 @@
 
 ## CONTENTS
 1. [About Project](https://github.com/Khushiraikar1/sudhaksha_maxo#about-project)
-    1.[ Built with](https://github.com/Khushiraikar1/sudhaksha_maxo#built-with)
-    
+- [ Built with](https://github.com/Khushiraikar1/sudhaksha_maxo#built-with)
+2. [ Getting Started](https://github.com/Khushiraikar1/sudhaksha_maxo/blob/main/README.md#getting-started)
+   - [Prerequisites](https://github.com/Khushiraikar1/sudhaksha_maxo#prerequisites)
+   - [Installation](https://github.com/Khushiraikar1/sudhaksha_maxo#installation)
+3. [Contribution](https://github.com/Khushiraikar1/sudhaksha_maxo/blob/main/README.md#contribution)
+  
     
 
 # About Project
@@ -14,7 +18,7 @@ For the SCL maxo hackathon submission of team Sudhaksha
 So we are creating a app which will have features of conducting online live classes with a timetable (the factulty member who has logged in can eenter the class details and the students will be notified at the mentioned timings) and also the faculty member will have facility to post the recorded versions of their classes ..we will be adding a few basic videos ...at present we will create a few classrooms related to programming with few basic videos n if the users want they can add further recorded classes or reference videos as per their convenience..also there will be additional features like quizzes, assignments (to be assigned by the respective faculty users) and tracking attendance..if anyone wants to create a new classroom related to a particular domain we will be dropping our official mail id which will have a feature of authentication of the mail requests received for creating classes n replying with a particular password if found correct..there will also be a seperate section for career guidance.
 
 ## Built with
-![Untitled design (1)](https://user-images.githubusercontent.com/72095693/104134168-04825f80-53ae-11eb-8977-922a4c088bd3.png)
+![html5-js-css3-jquery-logo](https://user-images.githubusercontent.com/72095693/104134429-70b19300-53af-11eb-97d6-b69dbc6ff14a.png)
 ![boot](https://user-images.githubusercontent.com/72095693/104133473-d3a02b80-53a9-11eb-9be4-bcb41f25fb56.png)
 ![images](https://user-images.githubusercontent.com/72095693/104130654-e9a4f080-5397-11eb-82d9-ee1abfb34d6d.png)
 - HTML
@@ -53,7 +57,7 @@ If you are giving diffrent name for virtual environment `venv` then mention `.gi
 pip install -r requirements.txt
 
 ```
-## Instalation
+## Installation
 4. Checkout the developed branch
 ```
 git status
@@ -67,7 +71,7 @@ git checkout develop
 python manage.py runserver
 
 ```
-## Contributing
+## Contribution
 - Fork the Project
 - Create your Feature Branch [`git checkout -b feature/AmazingFeature`]
 - Commit your Changes [`git commit -m 'Add some AmazingFeature`]
