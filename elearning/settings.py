@@ -136,8 +136,7 @@ EMAIL_USE_SSL=False
 
 LOGIN_REDIRECT_URL='home'
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    '/var/www/static/',
+  os.path.join(BASE_DIR,'static'),
 ]
 success_url='/Accounts/registration'
 
