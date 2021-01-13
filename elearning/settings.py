@@ -24,7 +24,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 SECRET_KEY = 'e56t$rzwagro8@9y66k_81o$ph+^%&(_jk^28n(d43@p%#@(+='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['adhyayana.herokuapp.com','127.0.0.1']
 
