@@ -55,10 +55,11 @@ def joinclass(request):
             messages.error(request,f'No Class Exists')
             return redirect('/classroom')
         user=profile.objects.get(user=request.user)
-        if request.user.username in join_class.rem_members.split(','):
-            messages.error(request,f'You were Removed from the class!You cannot join Again')
-        else:
-            join_class.members.add(user)
+        if join_class.rem_members is not None:
+            if request.user.username in join_class.rem_members.split(','):
+                messages.error(request,f'You were Removed from the class!You cannot join Again')
+            else:
+                join_class.members.add(user)
         return redirect('classroom/'+c_id)
 
 
