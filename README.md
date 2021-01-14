@@ -66,7 +66,11 @@ git branch
 git checkout develop
 
 ```
-5. Runserver
+5. Create a super user. In django if you want to access admin page you have to create an account first.
+```
+python manage.py createsuperuser
+```
+6. Runserver
 ```
 python manage.py runserver
 
