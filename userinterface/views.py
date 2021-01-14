@@ -260,6 +260,7 @@ def classconfig(request,c_id):
         else:
             time_table=timetable(clsobj=class_obj,class_day=day,class_time=time)
             time_table.save()
+            messages.success(request,f'Class Updated')
             return redirect('/classroom/'+c_id+'/classconfig')
     else:
         timetables=timetable.objects.filter(clsobj=class_obj)

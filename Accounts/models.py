@@ -39,6 +39,7 @@ class classroom(models.Model):
        c_url=models.URLField(default=None,null=True)
        c_link=models.URLField(default=None,null=True)
        members=models.ManyToManyField(profile)
+       rem_members=models.CharField(max_length=3000,null=True)
 
        def __str__(self):
               return str(self.class_name)
