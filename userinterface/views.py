@@ -47,6 +47,7 @@ def configure_class(request,cid):
 
 @login_required
 def joinclass(request):
+    flag=0
     if request.POST:
         c_id=request.POST['classid']
         try:
@@ -58,8 +59,9 @@ def joinclass(request):
         if join_class.rem_members is not None:
             if request.user.username in join_class.rem_members.split(','):
                 messages.error(request,f'You were Removed from the class!You cannot join Again')
-            else:
-                join_class.members.add(user)
+                flag=1
+        if flag==0:
+            join_class.members.add(user)
         return redirect('classroom/'+c_id)
 
 
