@@ -26,7 +26,7 @@ SECRET_KEY = 'e56t$rzwagro8@9y66k_81o$ph+^%&(_jk^28n(d43@p%#@(+='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['adhyayana.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -48,12 +48,14 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'elearning.urls'
@@ -123,9 +125,8 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
+STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
-
 EMAIL_HOST_USER = "adhayayan.scl7maxo@gmail.com"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -135,8 +136,7 @@ EMAIL_USE_SSL=False
 
 LOGIN_REDIRECT_URL='home'
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    '/var/www/static/',
+  os.path.join(BASE_DIR,'static'),
 ]
 success_url='/Accounts/registration'
 

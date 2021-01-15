@@ -14,9 +14,9 @@
         <h5 class="card-title">{{user_class.class_name}}</h5>
         <p class="card-text">{{user_class.class_sec}}</p>
         {%if request.user == user_class.is_admin%}
-        <a href="{{user_class.get_abs_url}}/admin" class="btn-lg btn-primary">Go somewhere</a>
+        <a href="{{user_class.get_abs_url}}/admin" class="btn-lg btn-primary">Go To Classroom</a>
         {%else%}
-        <a href="{{user_class.get_abs_url}}" class="btn-lg btn-primary">Go somewhere</a>
+        <a href="{{user_class.get_abs_url}}" class="btn-lg btn-primary">Go To Classroom</a>
         {%endif%}
         </div>
         </div>
