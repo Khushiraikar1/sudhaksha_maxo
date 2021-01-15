@@ -18,9 +18,12 @@ For the SCL maxo hackathon submission of team Sudhaksha
 So we are creating a app which will have features of conducting online live classes with a timetable (the factulty member who has logged in can eenter the class details and the students will be notified at the mentioned timings) and also the faculty member will have facility to post the recorded versions of their classes ..we will be adding a few basic videos ...at present we will create a few classrooms related to programming with few basic videos n if the users want they can add further recorded classes or reference videos as per their convenience..also there will be additional features like quizzes, assignments (to be assigned by the respective faculty users) and tracking attendance..if anyone wants to create a new classroom related to a particular domain we will be dropping our official mail id which will have a feature of authentication of the mail requests received for creating classes n replying with a particular password if found correct..there will also be a seperate section for career guidance.
 
 ## Built with
-![html5-js-css3-jquery-logo](https://user-images.githubusercontent.com/72095693/104134429-70b19300-53af-11eb-97d6-b69dbc6ff14a.png)
-![boot](https://user-images.githubusercontent.com/72095693/104133473-d3a02b80-53a9-11eb-9be4-bcb41f25fb56.png)
-![images](https://user-images.githubusercontent.com/72095693/104130654-e9a4f080-5397-11eb-82d9-ee1abfb34d6d.png)
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
+<a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="Powered by Django." title="Powered by Django." /></a>
+
+<img src="https://user-images.githubusercontent.com/69910165/104742945-19c20a00-5771-11eb-9b72-df48f7ab6464.png" height="100px" />  <img src="https://user-images.githubusercontent.com/69910165/104744454-e7b1a780-5772-11eb-8fda-df5f97bb1b17.png" height="80px" />
+
 - HTML
 - CSS
 - JAVASCRIPT
@@ -71,6 +74,14 @@ git checkout develop
 python manage.py runserver
 
 ```
+## Hosting
+
+Hosted On
+
+<a href="https://www.heroku.com/"><img src="https://user-images.githubusercontent.com/69910165/104746175-eda88800-5774-11eb-8508-ad1817750f37.jpg" border="0" height="100px" /></a>
+
+Webapp Link: <a href="https://adhyayana.herokuapp.com/home">https://adhyayana.herokuapp.com/home</a>
+
 ## Contribution
 - Fork the Project
 - Create your Feature Branch [`git checkout -b feature/AmazingFeature`]
