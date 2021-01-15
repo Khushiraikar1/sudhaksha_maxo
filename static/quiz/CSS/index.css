@@ -8,6 +8,17 @@ body{
     background-repeat: no-repeat !important;
     background-attachment: fixed;
 }
+.start-bt{
+    background-color: #e3ebea; /* Green */
+    border: none;
+    color: rgb(12, 1, 1);
+    padding: 9px 17px;
+    text-align: center;
+    font-size: 10px;
+    margin: 5px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+     }
 .qPanel{
     margin:auto;
     width:800px;

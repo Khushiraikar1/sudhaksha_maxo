@@ -47,6 +47,7 @@ def configure_class(request,cid):
 
 @login_required
 def joinclass(request):
+    flag=0
     if request.POST:
         c_id=request.POST['classid']
         try:
@@ -55,8 +56,14 @@ def joinclass(request):
             messages.error(request,f'No Class Exists')
             return redirect('/classroom')
         user=profile.objects.get(user=request.user)
-        join_class.members.add(user)
+        if join_class.rem_members is not None:
+            if request.user.username in join_class.rem_members.split(','):
+                messages.error(request,f'You were Removed from the class!You cannot join Again')
+                flag=1
+        if flag==0:
+            join_class.members.add(user)
         return redirect('classroom/'+c_id)
+
 
 def home(request):
     form=Classform()
@@ -150,6 +157,19 @@ def people(request,c_id):
     url='/classroom/'+c_id
     class_members=classroom.objects.get(classid=c_id).members.all()
     userclass=classroom.objects.get(classid=c_id)
+    if request.POST:
+        rem_student=profile.objects.get(Uid=request.POST['rem_student'])
+        student=rem_student.user.username
+        rmembers=userclass.rem_members
+        if rmembers is not None:
+            removed_list=rmembers.split(',')
+        else:
+            removed_list=[]
+        removed_list.append(student)
+        rem_str=','.join(removed_list)
+        userclass.rem_members=rem_str
+        userclass.members.remove(rem_student)
+        userclass.save()
     return render(request,'people.html',{'classID':c_id,'back':url,'members':class_members,'userclass':userclass})
 
 def notify_me(timetables):
@@ -230,8 +250,9 @@ def classconfig(request,c_id):
         day=request.POST['class_day']
         time=request.POST['class_time']
         clink=request.POST['clink']
-        class_obj.c_link=clink
-        class_obj.save()
+        if clink is not '':
+            class_obj.c_link=clink
+            class_obj.save()
         time_day=timetable.objects.filter(clsobj=class_obj)
         for classt in time_day:
             if day in classt.class_day:
@@ -242,6 +263,7 @@ def classconfig(request,c_id):
         else:
             time_table=timetable(clsobj=class_obj,class_day=day,class_time=time)
             time_table.save()
+            messages.success(request,f'Class Updated')
             return redirect('/classroom/'+c_id+'/classconfig')
     else:
         timetables=timetable.objects.filter(clsobj=class_obj)
@@ -277,7 +299,8 @@ def upload(request,c_id):
             dat=datetime.datetime.now()
             f_upload=posts(posted_by=request.user,p_class=class_obj,post=announcement,description=desc,upload_date=dat)
             f_upload.save()
-       return HttpResponse('<h1>file saved</h1>')
+            messages.success(request,f'Posted Successfully!!')
+       return redirect('/classroom/'+c_id+'/admin')
     else:
         return render(request,'upload.html')
         
